@@ -7,8 +7,8 @@
       <h1>Farmer Market</h1>
     </div>
     <div style="flex: 1">
-      <el-input style="width: 500px;padding: 10px" type="text" size="small"></el-input>
-      <el-button type="success"><i class="el-icon-search"></i>Search</el-button>
+      <el-input style="width: 500px;padding: 10px;height: 50px" type="text" size="small"></el-input>
+      <el-button type="success" icon="search">Search</el-button>
     </div>
     <div>
       <el-avatar :size="40" :src="avatar" :class="['avatarInfo']"></el-avatar>

@@ -1,14 +1,16 @@
 import { createWebHistory, createRouter } from "vue-router"
-import CustomerIndex from './components/customer/CustomerIndex'
+// import CustomerIndex from './components/customer/CustomerIndex'
 import CustomerMain from './components/customer/CustomerMain'
 import CustomerInfo from './components/customer/CustomerInfo'
 import CustomerCart from './components/customer/CustomerCart'
+import CustomerWishlist from './components/customer/CustomerWishlist'
+import CustomerOrder from './components/customer/CustomerOrder'
+import MockTest from './components/Test'
 const routes = [
     {
-        path: '/customer',
-        name: 'customerIndex',
-        component: CustomerIndex,
-        redirect: '/customer/main',
+        path: '/test',
+        name: 'mockTest',
+        component: MockTest,
     },
     {
         path: '/customer/main',
@@ -24,6 +26,16 @@ const routes = [
         path: '/customer/cart',
         name: 'customerCart',
         component: CustomerCart,
+    },
+    {
+        path: '/customer/wishlist',
+        name: 'customerWishlist',
+        component: CustomerWishlist,
+    },
+    {
+        path: '/customer/order',
+        name: 'customerOrder',
+        component: CustomerOrder,
     },
 ]
 

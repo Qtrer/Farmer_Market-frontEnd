@@ -1,9 +1,8 @@
 <template>
   <div style="display: flex; height: 50px">
-    <h1 style="text-align:left;margin: 10px">Cart</h1>
+    <h1 style="text-align:left;margin: 10px">Wishlist</h1>
     <div style="flex: 1"></div>
-    <div style="margin-top: 5px;margin-right: 20px">count: {{ num }}</div>
-    <el-button type="success">go to payment</el-button>
+    <el-button type="success">add to cart</el-button>
   </div>
   <div style="height: 300px">
     <el-row v-for="row in 3" :key="row" :gutter="10" type="flex" justify="center">
@@ -15,11 +14,7 @@
             <p style="height: 30px">price</p>
           </div>
         </el-card>
-        <div style="display: inline-block;margin-top: 5px">
-          <el-button circle icon="minus" size="small"></el-button>
-          <span style="margin-left: 10px;margin-right: 10px">1</span>
-          <el-button circle icon="plus" size="small"></el-button>
-        </div>
+        <el-button icon="minus" style="margin-top: 5px">delete</el-button>
       </el-col>
     </el-row>
   </div>
@@ -27,7 +22,7 @@
 
 <script>
 export default {
-  name: "CustomerCart",
+  name: "CustomerWishlist",
   data() {
     return {
       num:Math.random(),
@@ -50,22 +45,22 @@ export default {
 </script>
 
 <style scoped>
-  .product-card {
-    text-align: center;
-    justify-content: center;
-    height: 250px;
-  }
-  .product-card:hover {
-    margin-top: -10px;
-  }
-  .product-card.is-active {
-    border-color: green;
-  }
-  .product-img {
-    max-width: 150px;
-    max-height: 150px;
-  }
-  .product-name {
-    margin-top: 10px;
-  }
+.product-card {
+  text-align: center;
+  justify-content: center;
+  height: 250px;
+}
+.product-card:hover {
+  margin-top: -10px;
+}
+.product-card.is-active {
+  border-color: green;
+}
+.product-img {
+  max-width: 150px;
+  max-height: 150px;
+}
+.product-name {
+  margin-top: 10px;
+}
 </style>
