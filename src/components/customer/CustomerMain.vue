@@ -1,41 +1,30 @@
 <template>
-  <div style="height: 50%">
+  <div style="height: 400px">
     <el-row>
       <el-col>
-        <el-card>
+        <el-card style="height: 350px">
           <div style="display: flex">
-            <div><img src="@/assets/left.png" style="width: 20px;height: 20px;margin-top: 150px"></div>
+            <div style="margin-top: 125px">
+              <el-button type="success" circle icon="arrow-left"></el-button>
+            </div>
             <div style="flex: 1"><img src="@/assets/logo.png"></div>
-            <div><img src="@/assets/right.png" style="width: 20px;height: 20px;margin-top: 150px"></div>
+            <div style="margin-top: 125px">
+              <el-button type="success" circle icon="arrow-right"></el-button>
+            </div>
           </div>
         </el-card>
       </el-col>
     </el-row>
   </div>
-  <div>
-    <el-row :gutter="10" type="flex" justify="center">
-      <el-col :span="6">
-        <el-card>
+  <div style="height: 270px">
+    <el-row v-for="row in 3" :key="row" :gutter="10" type="flex" justify="center">
+      <el-col v-for="col in 6" :key="col" :span="4">
+        <el-card class="product-card">
           <img class="product-img" src="@/assets/logo.png">
-          <p class="product-name">1</p>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card>
-          <img class="product-img" src="@/assets/logo.png">
-          <p class="product-name">2</p>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card>
-          <img class="product-img" src="@/assets/logo.png">
-          <p class="product-name">3</p>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card>
-          <img class="product-img" src="@/assets/logo.png">
-          <p class="product-name">4</p>
+          <div class="product-name">
+            <p style="height: 30px">name</p>
+            <p style="height: 30px">price</p>
+          </div>
         </el-card>
       </el-col>
     </el-row>
@@ -50,16 +39,19 @@ export default {
 </script>
 
 <style scoped>
-  .el-card {
+  .product-card {
     text-align: center;
     justify-content: center;
-    height: 350px;
+    height: 250px;
+  }
+  .product-card:hover {
+    margin-top: -10px;
   }
   .product-img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 150px;
+    max-height: 150px;
   }
   .product-name {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 </style>

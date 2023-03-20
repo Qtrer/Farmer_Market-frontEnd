@@ -16,18 +16,23 @@ export default {
       menu_data:[
         {
           name:'index',
-          icon:'el-icon-location',
           path:'/customer/main'
         },
         {
           name:'profile',
-          icon:'el-icon-document',
           path:'/customer/info'
         },
         {
           name:'cart',
-          icon:'el-icon-setting',
           path:'/customer/cart'
+        },
+        {
+          name:'wishlist',
+          path:'/customer/wishlist'
+        },
+        {
+          name:'order',
+          path:'/customer/order'
         }
       ]
     }
