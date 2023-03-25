@@ -1,5 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router"
 // import CustomerIndex from './components/customer/CustomerIndex'
+import LoginPage from './components/LoginPage'
+import RegistrationPage from './components/RegistrationPage'
 import CustomerMain from './components/customer/CustomerMain'
 import CustomerInfo from './components/customer/CustomerInfo'
 import CustomerCart from './components/customer/CustomerCart'
@@ -11,6 +13,16 @@ const routes = [
         path: '/test',
         name: 'mockTest',
         component: MockTest,
+    },
+    {
+        path: '/login',
+        name: 'LoginPage',
+        component: LoginPage,
+    },
+    {
+        path: '/register',
+        name: 'RegistrationPage',
+        component: RegistrationPage,
     },
     {
         path: '/customer/main',
