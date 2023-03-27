@@ -1,4 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router"
+//import LoginPage from './components/LoginPage'
+//import RegistrationPage from './components/RegistrationPage'
 import CustomerMain from './components/customer/CustomerMain'
 import CustomerInfo from './components/customer/CustomerInfo'
 import CustomerInfoChange from './components/customer/CustomerInfoChange'
@@ -46,6 +48,7 @@ const routes = [
             { path: 'order', name: 'customerOrder', component: CustomerOrder },
             { path: 'productDetail/:id', name: 'productDetail', component: CustomerProductDetail },
         ]
+
     },
 ]
 
