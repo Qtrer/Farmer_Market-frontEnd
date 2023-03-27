@@ -44,7 +44,7 @@ const routes = [
             { path: 'payment', name: 'customerPayment', component: CustomerPayment },
             { path: 'wishlist', name: 'customerWishlist', component: CustomerWishlist },
             { path: 'order', name: 'customerOrder', component: CustomerOrder },
-            { path: 'productDetail', name: 'productDetail', component: CustomerProductDetail },
+            { path: 'productDetail/:id', name: 'productDetail', component: CustomerProductDetail },
         ]
     },
 ]

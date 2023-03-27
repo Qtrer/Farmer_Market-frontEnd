@@ -3,18 +3,18 @@
     <h1 style="text-align:left;margin: 10px">Info Management</h1>
   </div>
   <div style="height: 300px">
-    <el-form :model="infoForm" label-width="100px" ref="infoForm">
+    <el-form :model="user" label-width="100px" ref="infoForm">
       <el-form-item label="username: " prop="username">
-        <p>{{ infoForm.username }}</p>
+        <p>{{ user.username }}</p>
       </el-form-item>
       <el-form-item label="email: " prop="email">
-        <p>{{ infoForm.email }}</p>
+        <p>{{ user.email }}</p>
       </el-form-item>
       <el-form-item label="password: " prop="password">
-        <p>{{ infoForm.password }}</p>
+        <p>{{ user.password }}</p>
       </el-form-item>
       <el-form-item label="address: " prop="address">
-        <p>{{ infoForm.address }}</p>
+        <p>{{ user.address }}</p>
       </el-form-item>
       <el-form-item>
         <el-button type="success" @click="goToPage">change</el-button>
@@ -28,12 +28,7 @@ export default {
   name: "CustomerInfo",
   data(){
     return{
-      infoForm:{
-        username: '',
-        email: '',
-        password: '',
-        address: '',
-      }
+      user: this.$store.getters.getCustomerById(1),
     }
   },
   methods: {

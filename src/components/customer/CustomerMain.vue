@@ -19,7 +19,7 @@
   <div style="height: 270px">
     <el-row :gutter="10" type="flex" justify="center">
       <el-col v-for="product in productList" :key="product.id" :span="4">
-        <el-link href="/customer/productDetail" :underline="false">
+        <el-link @click="goToPage(product.id)" :underline="false" tag="div">
           <el-card class="product-card">
             <img class="product-img" src="@/assets/logo.png">
             <div class="product-name">
@@ -38,7 +38,12 @@ export default {
   name: "CustomerMain",
   data() {
     return {
-      productList: this.$store.state.productList.state.productList
+      productList: this.$store.state.products.state.productList
+    }
+  },
+  methods: {
+    goToPage(id) {
+      this.$router.push({ name: 'productDetail', params: { id: id }})
     }
   }
 }

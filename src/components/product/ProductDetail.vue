@@ -1,43 +1,52 @@
 <template>
   <div style="display: flex; height: 50px">
-    <h1 style="text-align:left;margin: 10px">Product Name</h1>
+    <h1 style="text-align:left;margin: 10px">{{ product.name }}</h1>
   </div>
   <div style="display: flex;height: 350px">
     <div class="product-img">
       <img src="@/assets/logo.png">
     </div>
     <div class="product-info">
-      <el-form :model="infoForm" label-width="120px" ref="infoForm">
+      <el-form :model="product" label-width="120px" ref="infoForm">
         <el-form-item label="farmer name: " prop="farmerName">
-          <p>{{ infoForm.farmerName }}</p>
+          <p>{{ product.farmerName }}</p>
         </el-form-item>
         <el-form-item label="price: " prop="price">
-          <p>{{ infoForm.price }}</p>
+          <p>{{ product.price }}</p>
         </el-form-item>
         <el-form-item label="description: " prop="description">
-          <p>{{ infoForm.description }}</p>
+          <p>{{ product.description }}</p>
         </el-form-item>
       </el-form>
     </div>
   </div>
   <div style="display: inline-block; height: 50px">
-    <el-button type="warning">add to wishlist</el-button>
-    <el-button type="success">add to cart</el-button>
+    <el-button type="warning" @click="addToWishlist(product.id)">add to wishlist</el-button>
+    <el-button type="success" @click="addToCart(product.id)">add to cart</el-button>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 export default {
   name: "ProductDetail",
   data() {
     return{
-      infoForm:{
-        farmerName: '123',
-        price: '1',
-        description: '1231231231',
-      }
+      product: this.$store.getters.getProductById(parseInt(this.$route.params.id)),
     }
   },
+  methods: {
+    ...mapMutations(['addWishlist']),
+    ...mapMutations(['addCart']),
+    addToWishlist(id) {
+      this.addWishlist(id)
+      this.$router.push({name: 'customerWishlist'})
+    },
+    addToCart(id) {
+      this.addCart(id)
+      this.$router.push({name: 'customerCart'})
+    }
+  }
 }
 </script>
 

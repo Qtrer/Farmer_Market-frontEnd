@@ -15,7 +15,7 @@
               <p style="text-align: left; height: 50px; margin-left: 30px">£{{ product.price }}</p>
             </div>
             <div>
-              <el-button icon="minus" type="danger" @click.stop style="margin-top: 55px; margin-left: 5px">delete</el-button>
+              <el-button icon="delete" type="danger" @click.stop style="margin-top: 55px; margin-left: 5px"></el-button>
             </div>
           </div>
         </el-card>
@@ -30,7 +30,7 @@ export default {
   name: "CustomerWishlist",
   data() {
     return {
-      productList: this.$store.state.productList.state.wishlistProduct,
+      productList: this.$store.state.products.state.wishlistProduct,
     }
   },
   methods: {
