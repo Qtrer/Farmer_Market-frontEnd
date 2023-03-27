@@ -1,53 +1,54 @@
 import { createWebHistory, createRouter } from "vue-router"
-// import CustomerIndex from './components/customer/CustomerIndex'
-import LoginPage from './components/LoginPage'
-import RegistrationPage from './components/RegistrationPage'
+//import LoginPage from './components/LoginPage'
+//import RegistrationPage from './components/RegistrationPage'
 import CustomerMain from './components/customer/CustomerMain'
 import CustomerInfo from './components/customer/CustomerInfo'
+import CustomerInfoChange from './components/customer/CustomerInfoChange'
 import CustomerCart from './components/customer/CustomerCart'
+import CustomerPayment from './components/customer/CustomerPayment'
 import CustomerWishlist from './components/customer/CustomerWishlist'
 import CustomerOrder from './components/customer/CustomerOrder'
-import MockTest from './components/Test'
+import CustomerProductDetail from './components/product/ProductDetail'
+import CustomerCommon from "./components/customer/CustomerCommon";
+
+// const User = {
+//     data() {
+//         return {
+//             user: null
+//         }
+//     },
+//     created() {
+//         const userId = this.$route.params.id
+//         this.user = this.getUserById(userId)
+//     },
+//     methods: {
+//         getUserById(id) {
+//             let users = this.$store.state.customerList.state.customerList
+//             for (let user in users) {
+//                 if (user.id === id) {
+//                     return user
+//                 }
+//             }
+//         }
+//     },
+// }
+
 const routes = [
     {
-        path: '/test',
-        name: 'mockTest',
-        component: MockTest,
-    },
-    {
-        path: '/login',
-        name: 'LoginPage',
-        component: LoginPage,
-    },
-    {
-        path: '/register',
-        name: 'RegistrationPage',
-        component: RegistrationPage,
-    },
-    {
-        path: '/customer/main',
-        name: 'customerMain',
-        component: CustomerMain,
-    },
-    {
-        path: '/customer/info',
-        name: 'customerInfo',
-        component: CustomerInfo,
-    },
-    {
-        path: '/customer/cart',
-        name: 'customerCart',
-        component: CustomerCart,
-    },
-    {
-        path: '/customer/wishlist',
-        name: 'customerWishlist',
-        component: CustomerWishlist,
-    },
-    {
-        path: '/customer/order',
-        name: 'customerOrder',
-        component: CustomerOrder,
+        path: '/customer',
+        name: 'customerCommon',
+        component: CustomerCommon,
+        children: [
+            { path: 'main', name: 'customerMain', component: CustomerMain },
+            { path: 'info', name: 'customerInfo', component: CustomerInfo },
+            { path: 'infoChange', name: 'customerInfoChange', component: CustomerInfoChange },
+            { path: 'cart', name: 'customerCart', component: CustomerCart },
+            { path: 'payment', name: 'customerPayment', component: CustomerPayment },
+            { path: 'wishlist', name: 'customerWishlist', component: CustomerWishlist },
+            { path: 'order', name: 'customerOrder', component: CustomerOrder },
+            { path: 'productDetail/:id', name: 'productDetail', component: CustomerProductDetail },
+        ]
+
     },
 ]
 

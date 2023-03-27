@@ -15,24 +15,24 @@ export default {
     return {
       menu_data:[
         {
-          name:'index',
-          path:'/customer/main'
+          name: 'index',
+          path: '/customer/main'
         },
         {
-          name:'profile',
-          path:'/customer/info'
+          name: 'profile',
+          path: '/customer/info'
         },
         {
-          name:'cart',
-          path:'/customer/cart'
+          name: 'cart',
+          path: '/customer/cart'
         },
         {
-          name:'wishlist',
-          path:'/customer/wishlist'
+          name: 'wishlist',
+          path: '/customer/wishlist'
         },
         {
-          name:'order',
-          path:'/customer/order'
+          name: 'order',
+          path: '/customer/order'
         }
       ]
     }

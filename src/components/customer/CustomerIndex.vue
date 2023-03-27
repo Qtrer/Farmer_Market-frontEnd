@@ -1,12 +1,20 @@
 <template>
   <div>
     <el-container>
-      <el-header><Header/></el-header>
+      <el-header>
+        <Header/>
+      </el-header>
       <el-container>
-        <el-aside style="width: 250px"><Aside/></el-aside>
-        <el-main><router-view></router-view></el-main>
+        <el-aside style="width: 250px">
+          <Aside/>
+        </el-aside>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
-      <el-footer><Footer/></el-footer>
+      <el-footer>
+        <Footer/>
+      </el-footer>
     </el-container>
   </div>
 </template>
@@ -22,9 +30,6 @@ export default {
     Header,
     Aside,
     Footer
-  },
-  props: {
-    msg: String
   }
 }
 </script>

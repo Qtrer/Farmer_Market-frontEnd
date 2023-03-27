@@ -14,7 +14,8 @@
     "element-plus": "^2.2.36",
     "element-ui": "^2.15.13",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

@@ -1,9 +1,10 @@
 <template>
   <div style="display: flex; height: 50px">
     <h1 style="text-align:left;margin: 10px">Order</h1>
-    <div style="flex: 1">
+    <div style="flex: 1"></div>
+    <div>
       <el-input style="width: 500px;padding: 10px;height: 50px" type="text" size="small"></el-input>
-      <el-button type="success" icon="search">Search</el-button>
+      <el-button circle type="success" icon="search"></el-button>
     </div>
   </div>
   <div style="height: 300px">
@@ -24,7 +25,7 @@ export default {
         { orderNum: '1', time: '2023-01-01', status: 'completed' },
         { orderNum: '2', time: '2023-02-01', status: 'delivering' },
         { orderNum: '3', time: '2023-03-01', status: 'ordered' },
-        { orderNum: '4', time: '2023-01-22', status: 'refunded' },
+        { orderNum: '4', time: '2023-01-22', status: 'completed' },
       ]
     }
   }
