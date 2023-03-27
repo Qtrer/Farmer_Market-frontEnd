@@ -41,29 +41,9 @@ const store = createStore({
                 { id: 17, name: 'nuts', farmerName: 'farmer9', price: 2, description: 'good nuts', isisSelected: false },
                 { id: 18, name: 'sunflower', farmerName: 'farmer9', price: 1, description: 'good sunflower', isisSelected: false },
                 { id: 19, name: 'wheat', farmerName: 'farmer10', price: 2, description: 'good wheat', isisSelected: false },
-
             ],
         }
     },
-    getters: {
-        getProductById: (state) => (id) => {
-            return state.productList.find((product) => product.id === id)
-        },
-        getCartById: (state) => (id) => {
-            return state.cartProduct.find((product) => product.id === id)
-        },
-        getWishlistById: (state) => (id) => {
-            return state.wishlistProduct.find((product) => product.id === id)
-        },
-    },
-    mutations: {
-        toggleSelect(state, id){
-            const product = state.cartProduct.find((product) => product.id === id)
-            if (product) {
-                product.isSelected = !product.isSelected
-            }
-        }
-    }
 })
 
 export default store

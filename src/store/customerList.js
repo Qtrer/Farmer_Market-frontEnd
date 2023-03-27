@@ -12,15 +12,6 @@ const store = createStore({
             ]
         }
     },
-    mutations: {
-        getCustomer (state, data) {
-            for (let customer in state.customerList) {
-                if (customer.email === data.email && customer.password === data.password){
-                    return customer
-                }
-            }
-        },
-    }
 })
 
 export default store

@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router"
-// Customer
+//import LoginPage from './components/LoginPage'
+//import RegistrationPage from './components/RegistrationPage'
 import CustomerMain from './components/customer/CustomerMain'
 import CustomerInfo from './components/customer/CustomerInfo'
 import CustomerInfoChange from './components/customer/CustomerInfoChange'
@@ -19,9 +20,6 @@ import FarmerListings from './components/farmer/FarmerListings'
 import FarmerEditListing from './components/farmer/FarmerEditListing'
 import FarmerMain from './components/farmer/FarmerMain'
 import FarmerOrders from './components/farmer/FarmerOrders'
-
-
-
 
 // const User = {
 //     data() {

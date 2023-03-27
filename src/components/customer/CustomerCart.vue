@@ -21,8 +21,9 @@
               <el-button circle icon="plus" size="small" @click.stop="addNum(product.id)"></el-button>
             </div>
             <div>
-              <el-button type="warning" @click.stop style="margin-top: 55px; margin-left: 5px">buy later</el-button>
-              <el-button icon="minus" type="danger" @click.stop style="margin-top: 55px; margin-left: 5px">delete</el-button>
+
+              <el-button icon="star" type="warning" @click.stop style="margin-top: 55px; margin-left: 5px"></el-button>
+              <el-button icon="delete" type="danger" @click.stop style="margin-top: 55px; margin-left: 5px"></el-button>
             </div>
           </div>
         </el-card>
@@ -33,12 +34,13 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import productList from "@/store/productList";
+
 export default {
   name: "CustomerCart",
   data() {
     return {
-      productList: this.$store.state.productList.state.cartProduct,
+
+      productList: this.$store.state.products.state.cartProduct,
       num: 0,
     }
   },
@@ -50,7 +52,8 @@ export default {
     },
     sumCount() {
       let total = 0
-      for (let product in productList){
+
+      for (let product in this.productList){
         if (product.isSelected){
           let count = product.num * product.price
           total += count
@@ -59,11 +62,12 @@ export default {
       this.num += total
     },
     addNum(id) {
-      const product = this.$store.state.productList.getters.getCartById(id)
+
+      const product = this.$store.getters.getCartById(id)
       product.num ++
     },
     minusNum(id) {
-      const product = this.$store.state.productList.getters.getCartById(id)
+      const product = this.$store.getters.getCartById(id)
       if (product.num > 1) {
         product.num --
       }
