@@ -1,5 +1,6 @@
 <template>
   <BuyerIndex/>
+<!--  <router-view/>-->
 </template>
 
 <script>

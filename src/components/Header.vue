@@ -1,7 +1,7 @@
 <template>
   <header>
     <div>
-      <img src="@/assets/logo.png" alt="logo">
+      <img src="@/assets/logo_light.png" alt="logo">
     </div>
     <div>
       <h1>Farmer Market</h1>

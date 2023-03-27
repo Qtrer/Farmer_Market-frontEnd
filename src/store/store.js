@@ -13,6 +13,7 @@ const store = createStore({
     },
     mutations: {
         toggleCartSelected(state, id){
+
             const product = state.products.state.cartProduct.find((product) => product.id === id)
             if (product) {
                 product.isSelected = !product.isSelected
@@ -95,5 +96,4 @@ const store = createStore({
         },
     },
 })
-
 export default store
